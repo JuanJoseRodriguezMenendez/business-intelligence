@@ -48,5 +48,11 @@ def heatmaps():
     json = GlucosaChi.prediccion()
     return json
 
+@app.route('/api/bi/swagger', methods=['GET'])
+def get_swagger():
+
+    swagger_json = open('BI_glucoseV1.json', 'r').read()
+    return swagger_json
+
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0',port=5001)
