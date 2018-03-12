@@ -1,0 +1,53 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "API for Fiwoo's Business Intelligence (BI) glucose Microservice",
+    "description": "This service calculates a prediction of future glucose levels using historical data from a user.",
+    "license": {
+      "name": "Apache License Version 2.0"
+    }
+  },
+  "host": "platform.fiwoo.eu",
+  "basePath": "/api/bi/",
+  "tags": [
+    {
+      "name": "BI-controller",
+      "description": "BI Controller"
+    }
+  ],
+  "paths": {
+    "/prediction": {
+      "get": {
+        "tags": [
+          "BI-controller"
+        ],
+        "summary": "get glucose prediction",
+        "operationId": "getGlucosePrediction",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "gluclose prediction",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string",
+                  "description": "predicted glucose value."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    }
+  }
+}
