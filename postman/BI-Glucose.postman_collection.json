@@ -1,0 +1,48 @@
+{
+	"info": {
+		"name": "BI-Glucose",
+		"_postman_id": "72f068db-7e46-47c1-b56c-661881645a30",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Prediction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d9811b3-89de-4f34-a245-509eee8199cc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Value is shown\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"value\");",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/prediction",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"prediction"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
