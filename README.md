@@ -24,6 +24,6 @@ In order to deploy this microservice using Docker, follow these steps:
 
 		`docker pull fiwoo/business-intelligence`
 
-2. Run the image. Take into account that the microservice is started on port 5001.
+2. Run the image. Take into account that the microservice is started on port 5001:
 
 		`sudo docker run -d --name business_intelligence -p 5001:5001 fiwoo/business-intelligence`
